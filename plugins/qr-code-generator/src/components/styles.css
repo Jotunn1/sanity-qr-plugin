@@ -1,0 +1,9 @@
+.plugin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plugin-container>div:first-of-type {
+    width: 60%;
+}

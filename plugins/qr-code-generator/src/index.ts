@@ -1,7 +1,7 @@
 import { definePlugin } from 'sanity';
 import { CodeBlockIcon } from '@sanity/icons';
-import { route } from 'sanity/router'
-import TestComponent from './components/TestComponent';
+import { route } from 'sanity/router';
+import PluginContainer from './components/PluginContainer';
 
 interface MyPluginConfig {
   /* nothing here yet */
@@ -17,7 +17,7 @@ export const myPlugin = definePlugin<MyPluginConfig | void>((options) => {
         name: 'qr-code-generator',
         title: 'QR Code generator',
         icon: CodeBlockIcon,
-        component: TestComponent,
+        component: PluginContainer,
         route: route.create('/*'),
         options,
       },
