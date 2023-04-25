@@ -5,7 +5,7 @@ const QRCodePreview = () => {
 
   const defaulOptions = {
     level: 'H',
-    margin: 1,
+    margin: 2,
     scale: 10,
     width: 300,
     color: {
@@ -13,11 +13,7 @@ const QRCodePreview = () => {
       light: '#ffffff',
     },
   }
-  return (
-    <div className="preview">
-      <Image text="https://www.youtube.com/watch?v=dQw4w9WgXcQ" options={defaulOptions} />
-    </div>
-  )
+  return <Image text="https://www.youtube.com/watch?v=dQw4w9WgXcQ" options={defaulOptions} />
 }
 
 export default QRCodePreview

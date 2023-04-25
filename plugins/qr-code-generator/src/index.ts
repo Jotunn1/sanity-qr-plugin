@@ -8,8 +8,6 @@ interface MyPluginConfig {
 }
 
 export const myPlugin = definePlugin<MyPluginConfig | void>((options) => {
-  // eslint-disable-next-line no-console
-  console.log('hello from sanity-plugin-qr-code-generator')
   return {
     name: 'sanity-plugin-qr-code-generator',
     tools: [

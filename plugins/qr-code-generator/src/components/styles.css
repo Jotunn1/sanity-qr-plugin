@@ -2,8 +2,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
 }
 
 .plugin-container>div:first-of-type {
     width: 60%;
+}
+
+.plugin-container>.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.plugin-container>.buttons>* {
+    cursor: pointer;
 }
