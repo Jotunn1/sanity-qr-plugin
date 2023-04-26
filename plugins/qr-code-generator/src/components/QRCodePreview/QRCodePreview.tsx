@@ -1,6 +1,6 @@
 import {useQRCode} from 'next-qrcode'
 
-const QRCodePreview = ({...url}: {url: string}) => {
+const QRCodePreview = ({url}: {url: string}) => {
   const {Image} = useQRCode()
 
   const defaulOptions = {

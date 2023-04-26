@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, createRef} from 'react'
 import './styles.css'
 import {ThemeColorProvider} from '@sanity/ui'
 import Input from './Input/Input'
@@ -7,15 +7,20 @@ import ButtonsRow from './ButtonsRow/ButtonsRow'
 
 const PluginContainer = () => {
   const [url, setUrl] = useState('')
+  const inputRef = createRef()
 
   const generateCode = () => {
-    console.log(url, 'generate code')
+    const inputValue = (inputRef.current as HTMLInputElement)?.value
+    
+    if (inputValue) {
+      setUrl(inputValue)
+    }
   }
 
   return (
     <ThemeColorProvider>
       <div className="plugin-container">
-        <Input />
+        <Input ref={inputRef} />
         <QRCodePreview url={url} />
         <ButtonsRow generateCode={generateCode} />
       </div>

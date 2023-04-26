@@ -1,12 +1,11 @@
 import {Card, Flex, TextInput} from '@sanity/ui'
-import {useState, FormEvent} from 'react'
+import {useState, FormEvent, forwardRef, Ref} from 'react'
 
-const Input = () => { 
+const Input = forwardRef((props, ref) => {
   const [inputValue, setInputValue] = useState('')
 
-  const changeHandler = (e: FormEvent<HTMLInputElement>) => {
+  const inputChangeHandler = (e: FormEvent<HTMLInputElement>) =>
     setInputValue(e.currentTarget.value)
-  }
 
   return (
     <Card padding={3} radius={3}>
@@ -14,15 +13,16 @@ const Input = () => {
         <label htmlFor="url">Your URL</label>
       </Flex>
       <TextInput
-        value={inputValue}
-        onChange={(e) => changeHandler(e)}
-        type="text"
-        radius={2}
-        placeholder="Write or paste URL"
         id="url"
+        type="text"
+        placeholder="Write or paste URL"
+        radius={2}
+        ref={ref as Ref<HTMLInputElement>}
+        value={inputValue}
+        onChange={(e) => inputChangeHandler(e)}
       />
     </Card>
   )
-}
+})
 
 export default Input
