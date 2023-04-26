@@ -4,20 +4,22 @@ import {ThemeColorProvider} from '@sanity/ui'
 import Input from './Input/Input'
 import QRCodePreview from './QRCodePreview/QRCodePreview'
 import ButtonsRow from './ButtonsRow/ButtonsRow'
-import PluginProvider from '../context/PluginProvider'
 
 const PluginContainer = () => {
   const [url, setUrl] = useState('')
+
+  const generateCode = () => {
+    console.log(url, 'generate code')
+  }
+
   return (
-    <PluginProvider>
-      <ThemeColorProvider>
-        <div className="plugin-container">
-          <Input url={url} setUrl={setUrl} />
-          <QRCodePreview url={url} />
-          <ButtonsRow />
-        </div>
-      </ThemeColorProvider>
-    </PluginProvider>
+    <ThemeColorProvider>
+      <div className="plugin-container">
+        <Input />
+        <QRCodePreview url={url} />
+        <ButtonsRow generateCode={generateCode} />
+      </div>
+    </ThemeColorProvider>
   )
 }
 

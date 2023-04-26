@@ -1,7 +1,7 @@
 import {Button} from '@sanity/ui'
 import {GenerateIcon, DownloadIcon} from '@sanity/icons'
 
-const ButtonsRow = () => {
+const ButtonsRow = ({generateCode}: {generateCode: any}) => {
   return (
     <div className="buttons">
       <Button
@@ -9,7 +9,7 @@ const ButtonsRow = () => {
         text="Generate QR"
         fontSize={[2, 2, 3]}
         padding={[3, 3, 4]}
-        onClick={() => console.log('Generate QR')}
+        onClick={generateCode}
       />
       <Button
         icon={DownloadIcon}
