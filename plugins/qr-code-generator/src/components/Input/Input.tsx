@@ -1,21 +1,19 @@
-import {Card, TextInput} from '@sanity/ui'
-import {useState} from 'react'
+import {Card, Flex, TextInput} from '@sanity/ui'
+import {Dispatch, SetStateAction} from 'react'
 
-const Input = () => {
-  const [url, setUrl] = useState('')
-
+const Input = ({url, setUrl}: {url: string; setUrl: Dispatch<SetStateAction<string>>}) => {
   return (
-    <Card padding={2} radius={3}>
-      <label htmlFor="url">Your URL</label>
+    <Card padding={3} radius={3}>
+      <Flex paddingBottom={3}>
+        <label htmlFor="url">Your URL</label>
+      </Flex>
       <TextInput
         radius={2}
         onChange={(event) => setUrl(event.currentTarget.value)}
         placeholder="Write or paste URL"
-        value={url}
+        // value={url}
         id="url"
       />
-
-      {url}
     </Card>
   )
 }
