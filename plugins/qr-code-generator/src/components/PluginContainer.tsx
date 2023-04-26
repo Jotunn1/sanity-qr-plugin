@@ -7,14 +7,18 @@ import ButtonsRow from './ButtonsRow/ButtonsRow'
 
 const PluginContainer = () => {
   const [url, setUrl] = useState('')
-  const inputRef = createRef()
+  const inputRef = createRef();
 
   const generateCode = () => {
     const inputValue = (inputRef.current as HTMLInputElement)?.value
-    
+
     if (inputValue) {
       setUrl(inputValue)
     }
+  }
+
+  const downloadImage = () => {
+    console.log('download')
   }
 
   return (
@@ -22,7 +26,7 @@ const PluginContainer = () => {
       <div className="plugin-container">
         <Input ref={inputRef} />
         <QRCodePreview url={url} />
-        <ButtonsRow generateCode={generateCode} />
+        <ButtonsRow generateCode={generateCode} downloadImage={downloadImage} />
       </div>
     </ThemeColorProvider>
   )

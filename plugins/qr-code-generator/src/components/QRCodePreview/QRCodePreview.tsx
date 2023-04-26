@@ -3,7 +3,8 @@ import {useQRCode} from 'next-qrcode'
 const QRCodePreview = ({url}: {url: string}) => {
   const {Image} = useQRCode()
 
-  const defaulOptions = {
+  const defaultOptions = {
+    type: 'image/jpeg',
     level: 'H',
     margin: 2,
     scale: 10,
@@ -13,10 +14,11 @@ const QRCodePreview = ({url}: {url: string}) => {
       light: '#ffffff',
     },
   }
+
   return (
     <Image
       text={`${url ? url : 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}`}
-      options={defaulOptions}
+      options={defaultOptions}
     />
   )
 }

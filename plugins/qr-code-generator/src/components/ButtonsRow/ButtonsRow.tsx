@@ -1,7 +1,13 @@
 import {Button} from '@sanity/ui'
 import {GenerateIcon, DownloadIcon} from '@sanity/icons'
 
-const ButtonsRow = ({generateCode}: {generateCode: any}) => {
+const ButtonsRow = ({
+  generateCode,
+  downloadImage,
+}: {
+  generateCode: () => void
+  downloadImage: () => void
+}) => {
   return (
     <div className="buttons">
       <Button
@@ -17,7 +23,7 @@ const ButtonsRow = ({generateCode}: {generateCode: any}) => {
         tone="primary"
         fontSize={[2, 2, 3]}
         padding={[3, 3, 4]}
-        onClick={() => console.log('Download')}
+        onClick={downloadImage}
       />
     </div>
   )
