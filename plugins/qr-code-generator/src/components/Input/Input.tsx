@@ -1,4 +1,4 @@
-import {Card, Flex, TextInput} from '@sanity/ui'
+import {Flex, TextInput, Text} from '@sanity/ui'
 import {useState, FormEvent, forwardRef, Ref} from 'react'
 
 const Input = forwardRef((props, ref) => {
@@ -8,12 +8,9 @@ const Input = forwardRef((props, ref) => {
     setInputValue(e.currentTarget.value)
 
   return (
-    <Card padding={3} radius={3}>
-      <Flex paddingBottom={3}>
-        <label htmlFor="url">Your URL</label>
-      </Flex>
+    <Flex direction={'column'} gap={4} marginTop={6}>
+      <Text size={3}>Your URL</Text>
       <TextInput
-        id="url"
         type="text"
         placeholder="Write or paste URL"
         radius={2}
@@ -21,7 +18,7 @@ const Input = forwardRef((props, ref) => {
         value={inputValue}
         onChange={(e) => inputChangeHandler(e)}
       />
-    </Card>
+    </Flex>
   )
 })
 

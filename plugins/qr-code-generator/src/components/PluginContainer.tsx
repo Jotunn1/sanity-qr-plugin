@@ -1,13 +1,12 @@
 import {useState, createRef} from 'react'
-import './styles.css'
-import {ThemeColorProvider} from '@sanity/ui'
+import {Container, Flex, ThemeColorProvider} from '@sanity/ui'
 import Input from './Input/Input'
 import QRCodePreview from './QRCodePreview/QRCodePreview'
 import ButtonsRow from './ButtonsRow/ButtonsRow'
 
 const PluginContainer = () => {
   const [url, setUrl] = useState('')
-  const inputRef = createRef();
+  const inputRef = createRef()
 
   const generateCode = () => {
     const inputValue = (inputRef.current as HTMLInputElement)?.value
@@ -23,11 +22,13 @@ const PluginContainer = () => {
 
   return (
     <ThemeColorProvider>
-      <div className="plugin-container">
+      <Container width={1}>
         <Input ref={inputRef} />
-        <QRCodePreview url={url} />
-        <ButtonsRow generateCode={generateCode} downloadImage={downloadImage} />
-      </div>
+        <Flex direction={'column'} align={'center'} gap={5} marginTop={4}>
+          <QRCodePreview url={url} />
+          <ButtonsRow generateCode={generateCode} downloadImage={downloadImage} />
+        </Flex>
+      </Container>
     </ThemeColorProvider>
   )
 }
