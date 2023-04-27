@@ -8,7 +8,7 @@ const Input = forwardRef((props, ref) => {
     setInputValue(e.currentTarget.value)
 
   return (
-    <Flex direction={'column'} gap={4} marginTop={6}>
+    <Flex direction={'column'} gap={4}>
       <Text size={3}>Your URL</Text>
       <TextInput
         type="text"
