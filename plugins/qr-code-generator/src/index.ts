@@ -7,13 +7,13 @@ interface MyPluginConfig {
   /* nothing here yet */
 }
 
-export const myPlugin = definePlugin<MyPluginConfig | void>((options) => {
+export const QrCodeGenerator = definePlugin<MyPluginConfig | void>((options) => {
   return {
     name: 'sanity-plugin-qr-code-generator',
     tools: [
       {
         name: 'qr-code-generator',
-        title: 'QR Code generator',
+        title: 'QR Code Generator',
         icon: CodeBlockIcon,
         component: PluginContainer,
         route: route.create('/*'),
