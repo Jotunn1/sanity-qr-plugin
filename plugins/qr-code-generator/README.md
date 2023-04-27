@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install sanity-plugin-qr-code-generator
+npm install sanity-plugin-qr-code-generator-test
 ```
 
 ## Usage
@@ -14,11 +14,11 @@ Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
 import {defineConfig} from 'sanity'
-import {myPlugin} from 'sanity-plugin-qr-code-generator'
+import { QrCodeGenerator } from 'sanity-plugin-qr-code-generator-test'
 
 export default defineConfig({
   //...
-  plugins: [myPlugin({})],
+  plugins: [QrCodeGenerator()],
 })
 ```
 
