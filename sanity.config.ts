@@ -2,6 +2,7 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas'
+import { QrCodeGenerator } from 'sanity-plugin-qr-code-generator-test'
 
 const projectId: string | undefined = (process.env.SANITY_STUDIO_PROJECT_ID as string)
 const dataset: string | undefined = (process.env.SANITY_STUDIO_DATASET as string)
@@ -13,7 +14,7 @@ export default defineConfig({
   projectId: projectId,
   dataset: dataset,
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool(), visionTool(), QrCodeGenerator()],
 
   schema: {
     types: schemaTypes,
