@@ -12,7 +12,6 @@ const PluginContainer = () => {
     const inputValue = (inputRef.current as HTMLInputElement)?.value
 
     if (inputValue) {
-      console.log('setUrl')
       setUrl(inputValue)
     }
   }, [])
@@ -24,7 +23,7 @@ const PluginContainer = () => {
 
   return (
     <ThemeColorProvider>
-      <Container width={1} paddingX={3} paddingTop={5}>
+      <Container width={[0, 0, 1]} paddingX={3} paddingTop={5}>
         <Input ref={inputRef} />
         <Flex direction={'column'} align={'center'} gap={5} marginTop={4}>
           <QRCodePreview url={url} />
