@@ -1,13 +1,14 @@
 import {Button, Flex} from '@sanity/ui'
 import {GenerateIcon, DownloadIcon} from '@sanity/icons'
+import {memo} from 'react'
 
-const ButtonsRow = ({
+const ButtonsRow = memo(function ButtonsRow({
   generateCode,
   downloadImage,
 }: {
   generateCode: () => void
   downloadImage: () => void
-}) => {
+}) {
   return (
     <Flex align={'center'} gap={5}>
       <Button
@@ -29,6 +30,6 @@ const ButtonsRow = ({
       />
     </Flex>
   )
-}
+})
 
 export default ButtonsRow

@@ -8,8 +8,8 @@ const QRCodePreview = ({url, size}: {url: string; size?: number}) => {
   const defaultOptions = {
     type: 'image/jpeg',
     level: 'H',
-    margin: 1,
-    scale: 10,
+    margin: 0,
+    scale: 5,
     width: size ? size : 300,
     color: {
       dark: '#000000',
@@ -19,6 +19,7 @@ const QRCodePreview = ({url, size}: {url: string; size?: number}) => {
 
   return (
     <div
+      id="qr-code-image"
       style={{width: defaultOptions.width + 'px', height: defaultOptions.width + 'px'}}
       ref={imageRef}
     >
