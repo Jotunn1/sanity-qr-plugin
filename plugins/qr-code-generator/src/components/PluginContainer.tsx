@@ -3,6 +3,7 @@ import {Container, Flex, ThemeColorProvider} from '@sanity/ui'
 import Input from './Input/Input'
 import QRCodePreview from './QRCodePreview/QRCodePreview'
 import ButtonsRow from './ButtonsRow/ButtonsRow'
+import {saveAs} from 'file-saver'
 
 const PluginContainer = () => {
   const [url, setUrl] = useState('')
@@ -14,11 +15,16 @@ const PluginContainer = () => {
     if (inputValue) {
       setUrl(inputValue)
     }
-  }, [])
+  }, [inputRef])
 
   const downloadImage = useCallback(() => {
-    const image = document.getElementById('qr-code-image')?.childNodes[0]
-    console.log(image, 'download')
+    const imageSrc: string | null = (
+      document.getElementById('qr-code-image')?.childNodes[0] as HTMLImageElement
+    ).getAttribute('src')
+    
+    if (imageSrc) {
+      saveAs(imageSrc, 'qr-code.jpg')
+    }
   }, [])
 
   return (
