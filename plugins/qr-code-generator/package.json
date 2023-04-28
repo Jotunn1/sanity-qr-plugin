@@ -1,7 +1,8 @@
 {
   "name": "sanity-plugin-qr-code-generator-test",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
+  "type": "commonjs",
   "keywords": [
     "sanity",
     "sanity-plugin"
@@ -38,7 +39,6 @@
     "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
-    "@sanity/icons": "^2.3.1",
     "@sanity/incompatible-plugin": "^1.0.4",
     "file-saver": "^2.0.5",
     "next-qrcode": "^2.4.1"
